@@ -1,0 +1,267 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif}
+.vc-wrap{padding:0 0 2rem}
+.vc-hero{background:linear-gradient(135deg,#04342C 0%,#0F6E56 50%,#1D9E75 100%);border-radius:16px;padding:2rem 2rem 1.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+.vc-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.vc-hero::after{content:'';position:absolute;bottom:-20px;left:60px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.03)}
+.vc-tag{display:inline-block;background:rgba(255,255,255,0.15);color:#9FE1CB;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:0.75rem}
+.vc-title{font-family:'Bebas Neue',sans-serif;font-size:52px;color:#fff;line-height:1;letter-spacing:2px;margin-bottom:0.5rem}
+.vc-title span{color:#5DCAA5}
+.vc-sub{color:#9FE1CB;font-size:14px;line-height:1.6;max-width:480px}
+.vc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#E1F5EE;font-size:12px;padding:4px 10px;border-radius:20px;margin-top:1rem;margin-right:8px}
+.vc-badge i{font-size:13px}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:1.5rem}
+.toc-btn{display:flex;align-items:center;gap:8px;padding:10px 12px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;cursor:pointer;font-size:13px;font-weight:500;color:var(--color-text-secondary);transition:all .2s;text-align:left}
+.toc-btn:hover{border-color:#1D9E75;color:#0F6E56;background:var(--color-background-secondary)}
+.toc-btn i{font-size:16px;color:#1D9E75;flex-shrink:0}
+.section{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.sec-head{display:flex;align-items:center;gap:12px;padding:1rem 1.25rem;cursor:pointer;user-select:none}
+.sec-num{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:18px;flex-shrink:0}
+.sec-title{font-weight:600;font-size:15px;flex:1;color:var(--color-text-primary)}
+.sec-badge{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px}
+.sec-arrow{font-size:14px;color:var(--color-text-secondary);transition:transform .25s}
+.sec-head.open .sec-arrow{transform:rotate(180deg)}
+.sec-body{display:none;padding:0 1.25rem 1.25rem;border-top:0.5px solid var(--color-border-tertiary)}
+.sec-body.open{display:block}
+.rule-item{display:flex;gap:12px;padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.rule-item:last-child{border-bottom:none}
+.rule-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.rule-icon i{font-size:15px}
+.rule-text{font-size:14px;line-height:1.6;color:var(--color-text-primary)}
+.rule-text strong{font-weight:600;color:var(--color-text-primary)}
+.rule-note{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;margin-bottom:4px}
+.warn{background:#FAEEDA;color:#633806}
+.danger{background:#FCEBEB;color:#501313}
+.ok{background:#EAF3DE;color:#173404}
+.info{background:#E6F1FB;color:#042C53}
+.footer-rule{margin-top:1.5rem;background:#E1F5EE;border:0.5px solid #5DCAA5;border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start}
+.footer-rule i{font-size:20px;color:#0F6E56;flex-shrink:0;margin-top:1px}
+.footer-rule p{font-size:13px;color:#085041;line-height:1.6}
+.footer-rule p strong{color:#04342C}
+</style>
+
+<h2 class="sr-only">Règlement officiel du serveur FiveM Vibecoast</h2>
+
+<div class="vc-wrap">
+
+<div class="vc-hero">
+  <div class="vc-tag">Règlement Officiel</div>
+  <div class="vc-title">VIBE<span>COAST</span></div>
+  <p class="vc-sub">Ce règlement s'applique à tous les joueurs sans exception. Le non-respect des règles entraîne des sanctions pouvant aller jusqu'au ban définitif.</p>
+  <div>
+    <span class="vc-badge"><i class="ti ti-calendar" aria-hidden="true"></i> Mis à jour : Mai 2026</span>
+    <span class="vc-badge"><i class="ti ti-shield" aria-hidden="true"></i> Version 2.1</span>
+  </div>
+</div>
+
+<div class="toc" role="navigation" aria-label="Sommaire">
+  <button class="toc-btn" onclick="toggle('s1')"><i class="ti ti-users" aria-hidden="true"></i>Comportement</button>
+  <button class="toc-btn" onclick="toggle('s2')"><i class="ti ti-theater" aria-hidden="true"></i>Roleplay</button>
+  <button class="toc-btn" onclick="toggle('s3')"><i class="ti ti-car" aria-hidden="true"></i>Conduite & PVP</button>
+  <button class="toc-btn" onclick="toggle('s4')"><i class="ti ti-message-circle" aria-hidden="true"></i>Communication</button>
+  <button class="toc-btn" onclick="toggle('s5')"><i class="ti ti-badge" aria-hidden="true"></i>Factions</button>
+  <button class="toc-btn" onclick="toggle('s6')"><i class="ti ti-ban" aria-hidden="true"></i>Sanctions</button>
+</div>
+
+<div class="section" id="s1">
+  <div class="sec-head" onclick="toggle('s1')" role="button" aria-expanded="false">
+    <div class="sec-num" style="background:#E1F5EE;color:#0F6E56"><i class="ti ti-users" aria-hidden="true" style="font-size:16px"></i></div>
+    <span class="sec-title">Comportement général</span>
+    <span class="sec-badge ok">Fondamental</span>
+    <i class="ti ti-chevron-down sec-arrow" aria-hidden="true"></i>
+  </div>
+  <div class="sec-body" id="body-s1">
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#EAF3DE"><i class="ti ti-heart" aria-hidden="true" style="color:#3B6D11"></i></div>
+      <div class="rule-text"><strong>Respect mutuel obligatoire.</strong> Tout joueur doit traiter les autres membres de la communauté avec respect. Le harcèlement, les insultes et les discriminations sont strictement interdits, en jeu comme hors jeu.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FAEEDA"><i class="ti ti-mood-kid" aria-hidden="true" style="color:#854F0B"></i></div>
+      <div class="rule-text"><span class="rule-note warn">Attention</span><br><strong>Âge minimum : 16 ans.</strong> Le serveur est interdit aux mineurs de moins de 16 ans. Le staff se réserve le droit de vérification.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#E6F1FB"><i class="ti ti-microphone" aria-hidden="true" style="color:#185FA5"></i></div>
+      <div class="rule-text"><strong>Micro de qualité requis.</strong> Un micro fonctionnel est obligatoire pour jouer. La qualité audio doit être suffisante pour ne pas perturber l'expérience des autres joueurs.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FCEBEB"><i class="ti ti-bug" aria-hidden="true" style="color:#A32D2D"></i></div>
+      <div class="rule-text"><span class="rule-note danger">Interdit</span><br><strong>Exploitation de bugs.</strong> Toute exploitation de bug, glitch ou faille technique à son avantage est interdite. Signalez-les immédiatement au staff.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FCEBEB"><i class="ti ti-ghost" aria-hidden="true" style="color:#A32D2D"></i></div>
+      <div class="rule-text"><span class="rule-note danger">Ban permanent</span><br><strong>Cheats & hacks.</strong> L'utilisation de tout logiciel tiers, mod de triche ou script non autorisé entraîne un ban définitif immédiat, sans appel.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s2">
+  <div class="sec-head" onclick="toggle('s2')" role="button" aria-expanded="false">
+    <div class="sec-num" style="background:#E1F5EE;color:#0F6E56"><i class="ti ti-theater" aria-hidden="true" style="font-size:16px"></i></div>
+    <span class="sec-title">Règles de Roleplay (RP)</span>
+    <span class="sec-badge ok">Essentiel</span>
+    <i class="ti ti-chevron-down sec-arrow" aria-hidden="true"></i>
+  </div>
+  <div class="sec-body" id="body-s2">
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#EAF3DE"><i class="ti ti-star" aria-hidden="true" style="color:#3B6D11"></i></div>
+      <div class="rule-text"><strong>RP permanent (Permadeath étendu).</strong> Vous devez rester dans votre personnage en toute circonstance. Les conversations hors-RP (OOC) ne sont autorisées qu'en cas d'urgence réelle, via le canal dédié.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FCEBEB"><i class="ti ti-x" aria-hidden="true" style="color:#A32D2D"></i></div>
+      <div class="rule-text"><span class="rule-note danger">Interdit</span><br><strong>No-RP (NRP).</strong> Agir de façon incohérente avec la réalité de votre personnage (sauter de bâtiments, ignorer les blessures, etc.) est sanctionné.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FAEEDA"><i class="ti ti-ambulance" aria-hidden="true" style="color:#854F0B"></i></div>
+      <div class="rule-text"><span class="rule-note warn">Règle CL</span><br><strong>Fear RP.</strong> Votre personnage doit craindre pour sa vie. Si une arme est braquée sur vous, vous ne pouvez pas fuir ou résister sans justification RP valable.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FCEBEB"><i class="ti ti-repeat" aria-hidden="true" style="color:#A32D2D"></i></div>
+      <div class="rule-text"><span class="rule-note danger">Interdit</span><br><strong>Revenge Kill (RK).</strong> Après une mort, votre personnage perd tout souvenir des 15 minutes précédentes. Vous ne pouvez pas retourner sur le lieu de votre mort ni vous venger.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FCEBEB"><i class="ti ti-clipboard-x" aria-hidden="true" style="color:#A32D2D"></i></div>
+      <div class="rule-text"><span class="rule-note danger">Interdit</span><br><strong>Metagaming (MG).</strong> Utiliser des informations obtenues hors jeu (stream, Discord, etc.) en jeu est strictement interdit. Vos personnages ne savent que ce qu'ils ont appris en jeu.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#E6F1FB"><i class="ti ti-building-hospital" aria-hidden="true" style="color:#185FA5"></i></div>
+      <div class="rule-text"><strong>Scènes sensibles.</strong> Les scènes de torture, violence extrême ou tout contenu choquant nécessitent le consentement préalable de tous les joueurs impliqués via la règle "Safe Word".</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s3">
+  <div class="sec-head" onclick="toggle('s3')" role="button" aria-expanded="false">
+    <div class="sec-num" style="background:#FAEEDA;color:#854F0B"><i class="ti ti-car" aria-hidden="true" style="font-size:16px"></i></div>
+    <span class="sec-title">Conduite & Combat (PVP)</span>
+    <span class="sec-badge warn">Important</span>
+    <i class="ti ti-chevron-down sec-arrow" aria-hidden="true"></i>
+  </div>
+  <div class="sec-body" id="body-s3">
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FCEBEB"><i class="ti ti-steering-wheel" aria-hidden="true" style="color:#A32D2D"></i></div>
+      <div class="rule-text"><span class="rule-note danger">Interdit</span><br><strong>VDM (Vehicle Deathmatch).</strong> Utiliser un véhicule comme arme pour tuer ou blesser intentionnellement sans contexte RP est strictement interdit.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FCEBEB"><i class="ti ti-crosshair" aria-hidden="true" style="color:#A32D2D"></i></div>
+      <div class="rule-text"><span class="rule-note danger">Interdit</span><br><strong>DM (Deathmatch).</strong> Tuer un joueur sans interaction RP préalable ni raison valable est interdit. Tout engagement doit avoir une justification narrative.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FAEEDA"><i class="ti ti-users-group" aria-hidden="true" style="color:#854F0B"></i></div>
+      <div class="rule-text"><span class="rule-note warn">Limite</span><br><strong>Maximum 6v6 en combat.</strong> Les affrontements organisés entre factions sont limités à 6 personnes maximum de chaque côté. Au-delà, une autorisation staff est requise.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#E6F1FB"><i class="ti ti-hand-stop" aria-hidden="true" style="color:#185FA5"></i></div>
+      <div class="rule-text"><strong>Zones de paix.</strong> L'hôpital, le commissariat et le marché central sont des zones de paix. Aucun combat, hold-up ou vol n'est autorisé dans ces zones.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#EAF3DE"><i class="ti ti-clock" aria-hidden="true" style="color:#3B6D11"></i></div>
+      <div class="rule-text"><strong>Cooldown après mort.</strong> Après un combat mortel, un délai de 15 minutes est obligatoire avant de reprendre toute activité liée à cet événement.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s4">
+  <div class="sec-head" onclick="toggle('s4')" role="button" aria-expanded="false">
+    <div class="sec-num" style="background:#E6F1FB;color:#185FA5"><i class="ti ti-message-circle" aria-hidden="true" style="font-size:16px"></i></div>
+    <span class="sec-title">Communication & canaux</span>
+    <span class="sec-badge info">Requis</span>
+    <i class="ti ti-chevron-down sec-arrow" aria-hidden="true"></i>
+  </div>
+  <div class="sec-body" id="body-s4">
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#E6F1FB"><i class="ti ti-headset" aria-hidden="true" style="color:#185FA5"></i></div>
+      <div class="rule-text"><strong>Discord obligatoire.</strong> Tous les joueurs doivent rejoindre le Discord officiel Vibecoast. Les annonces importantes, mises à jour et demandes de staff s'y font exclusivement.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FAEEDA"><i class="ti ti-volume" aria-hidden="true" style="color:#854F0B"></i></div>
+      <div class="rule-text"><span class="rule-note warn">Important</span><br><strong>TeamSpeak / Walkie-talkie RP.</strong> La communication vocale hors jeu entre joueurs alliés pendant une action RP est interdite. Utilisez uniquement les moyens de communication RP disponibles en jeu.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FCEBEB"><i class="ti ti-speakerphone" aria-hidden="true" style="color:#A32D2D"></i></div>
+      <div class="rule-text"><span class="rule-note danger">Interdit</span><br><strong>Spam & pub.</strong> Toute publicité pour d'autres serveurs, projets ou réseaux sociaux non autorisés est bannable. Le spam de messages est également interdit.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#EAF3DE"><i class="ti ti-ticket" aria-hidden="true" style="color:#3B6D11"></i></div>
+      <div class="rule-text"><strong>Signalement via ticket.</strong> Tout litige, bug ou comportement abusif doit être signalé via le système de tickets Discord. Les accusations publiques sans preuve sont sanctionnées.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s5">
+  <div class="sec-head" onclick="toggle('s5')" role="button" aria-expanded="false">
+    <div class="sec-num" style="background:#EEEDFE;color:#534AB7"><i class="ti ti-badge" aria-hidden="true" style="font-size:16px"></i></div>
+    <span class="sec-title">Factions & organisations</span>
+    <span class="sec-badge" style="background:#EEEDFE;color:#534AB7">Avancé</span>
+    <i class="ti ti-chevron-down sec-arrow" aria-hidden="true"></i>
+  </div>
+  <div class="sec-body" id="body-s5">
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#EEEDFE"><i class="ti ti-users-group" aria-hidden="true" style="color:#534AB7"></i></div>
+      <div class="rule-text"><strong>Création de faction.</strong> Toute organisation (gang, entreprise, MC, cartel) doit être validée par le staff. Un dossier de création comprenant background, objectifs et règles internes est requis.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#EEEDFE"><i class="ti ti-map-pin" aria-hidden="true" style="color:#534AB7"></i></div>
+      <div class="rule-text"><strong>Territoires.</strong> Les zones de territoire sont définies en accord avec le staff. Toute tentative de "claim" non autorisée sera invalidée et sanctionnée.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FAEEDA"><i class="ti ti-handshake" aria-hidden="true" style="color:#854F0B"></i></div>
+      <div class="rule-text"><span class="rule-note warn">Conseil</span><br><strong>Alliances & guerres.</strong> Les conflits majeurs entre factions doivent être déclarés au staff 24h à l'avance pour coordination RP et équilibre serveur.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#EAF3DE"><i class="ti ti-crown" aria-hidden="true" style="color:#3B6D11"></i></div>
+      <div class="rule-text"><strong>Hiérarchie faction.</strong> Le chef de faction est responsable du comportement de ses membres. Trois infractions du même membre entraînent la suspension de la faction entière.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s6">
+  <div class="sec-head" onclick="toggle('s6')" role="button" aria-expanded="false">
+    <div class="sec-num" style="background:#FCEBEB;color:#A32D2D"><i class="ti ti-ban" aria-hidden="true" style="font-size:16px"></i></div>
+    <span class="sec-title">Sanctions & appels</span>
+    <span class="sec-badge danger">Officiel</span>
+    <i class="ti ti-chevron-down sec-arrow" aria-hidden="true"></i>
+  </div>
+  <div class="sec-body" id="body-s6">
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FAEEDA"><i class="ti ti-alert-triangle" aria-hidden="true" style="color:#854F0B"></i></div>
+      <div class="rule-text"><strong>Avertissement (Warn).</strong> Premier niveau de sanction. 3 warns actifs = kick temporaire de 48h. Les warns expirent après 30 jours de bonne conduite.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FAEEDA"><i class="ti ti-clock-off" aria-hidden="true" style="color:#854F0B"></i></div>
+      <div class="rule-text"><strong>Suspension temporaire.</strong> De 24h à 30 jours selon la gravité. Un rapport détaillé de l'infraction est conservé dans le dossier du joueur.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#FCEBEB"><i class="ti ti-ban" aria-hidden="true" style="color:#A32D2D"></i></div>
+      <div class="rule-text"><span class="rule-note danger">Irréversible</span><br><strong>Ban définitif.</strong> Appliqué pour : triche, harcèlement grave, toxicité répétée, usurpation d'identité staff, ou toute infraction jugée irréparable par l'équipe.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#EAF3DE"><i class="ti ti-message-report" aria-hidden="true" style="color:#3B6D11"></i></div>
+      <div class="rule-text"><strong>Droit d'appel.</strong> Tout joueur sanctionné peut faire appel dans les 72h via ticket Discord. L'appel est examiné par un staff senior non impliqué dans la sanction initiale.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon" style="background:#E6F1FB"><i class="ti ti-shield-check" aria-hidden="true" style="color:#185FA5"></i></div>
+      <div class="rule-text"><strong>Décision du staff finale.</strong> Les décisions prises après appel sont définitives. Le staff se réserve le droit de modifier ou adapter les sanctions selon le contexte.</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-rule">
+  <i class="ti ti-info-circle" aria-hidden="true"></i>
+  <p><strong>En rejoignant Vibecoast, vous acceptez l'intégralité de ce règlement.</strong> L'ignorance d'une règle ne constitue pas une excuse valable. Ce règlement peut être mis à jour à tout moment — restez informé via le canal #annonces du Discord officiel.</p>
+</div>
+
+</div>
+
+<script>
+function toggle(id){
+  var head=document.querySelector('#'+id+' .sec-head');
+  var body=document.getElementById('body-'+id);
+  var open=body.classList.contains('open');
+  body.classList.toggle('open',!open);
+  head.classList.toggle('open',!open);
+  head.setAttribute('aria-expanded',String(!open));
+}
+</script>
